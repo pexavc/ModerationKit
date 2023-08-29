@@ -1,14 +1,22 @@
 # ModerationKit
 
-MarqueKit is a series of tools for creative encryption methods. Hiding data within various media types. Opening methods of sharing other than standards like QR Codes.
+Collection of tooling to create a safe experience browsing content. With a focus on offline solutions that use on-device resources to compute useful observations.
 
-## Stego (Least Significant Bit)
+## Guide
 
 ```swift
+public enum Detection {
+    public struct Result {
+        var label: String //"NSFW" or "SFW"
+        var confidence: Float
+    }
+}
+
+
 //Returns confidence level that an image is NSFW
-await ModerationKit.current.check(image, for: .nsfw) -> Float?
+await ModerationKit.current.check(image, for: .nsfw) -> Detection.Result?
 ```
 
 ## Credits
 
-- Stego LSB is based on [ISStego](https://github.com/isena/ISStego) by [@isena](https://github.com/isena)
+- Yahoo's detection for [OpenNSFW](https://github.com/yahoo/open_nsfw) 
