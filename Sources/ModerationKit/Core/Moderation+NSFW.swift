@@ -13,7 +13,6 @@ import Vision
 import AppKit
 #else
 import UIKit
-#endif
 
 extension CGImagePropertyOrientation {
     init(_ orientation: UIImage.Orientation) {
@@ -32,6 +31,8 @@ extension CGImagePropertyOrientation {
         }
     }
 }
+#endif
+
 
 public class NSFWDetector {
     
