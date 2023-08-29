@@ -6,17 +6,16 @@ Collection of tooling to create a safe experience browsing content. With a focus
 
 ```swift
 public enum Detection {
-    public struct Result {
+    public struct Result { // (Internal), can export if exact data is required
         var label: String //"NSFW" or "SFW"
         var confidence: Float
     }
 }
 
-
-//Returns confidence level that an image is NSFW
-await ModerationKit.current.check(image, for: .nsfw) -> Detection.Result?
+public func check(_ image: ModerationImage, for kind: Moderation.Kind) async -> Bool {
 ```
 
 ## Credits
 
 - Yahoo's detection for [OpenNSFW](https://github.com/yahoo/open_nsfw) 
+- bhky's keras version https://github.com/bhky/opennsfw2
